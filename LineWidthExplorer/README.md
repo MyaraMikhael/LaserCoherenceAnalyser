@@ -1,4 +1,5 @@
 Main script : LineWidthExplorer.m (a Matlab Object)
+
 Helper script (good start point) : LineWidthExplorerGUI.m
 
 This software package makes sense in the context of the following downloadable scientific publication in OSA's optics express 2016 : "Time-Dependant Laser Linewidth : beat-note digital acquisition and numerical analysis", N.Von Bandel, M. Myara, M. Sellahi, T. Souici, R. Dardaillon and P.Signoret.
