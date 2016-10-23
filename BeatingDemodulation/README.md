@@ -1,3 +1,6 @@
+Main script : BeatingDemodulation.m (a Matlab Object)
+Helper script (good start point) : BeatingDemodulationExample.m
+
 This software package makes sense in the context of the following downloadable scientific publication in OSA's optics express 2016 : "Time-Dependant Laser Linewidth : beat-note digital acquisition and numerical analysis", N.Von Bandel, M. Myara, M. Sellahi, T. Souici, R. Dardaillon and P.Signoret.
 
 Both software and publication can be downloaded for free. The publication is under OSA license, while the software is under BSD license. Please cite our Optics Express publication if you use this software or part of this software in the frame of scientific works or publications. Please mention the authors of this software if you reuse this code or part of this code in another software.
