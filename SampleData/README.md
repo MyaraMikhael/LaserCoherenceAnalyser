@@ -1,1 +1,3 @@
-This Folder simply contains some short recordings as input data for both LineWidthExplorer and BeatingDemodulation.
+This Folder simply contains some short recordings as input data for both LineWidthExplorer and BeatingDemodulation :
+- DFB-SC_shortRecord.mat is a record performed on the beating of two semiconductor DFBs targeting atomic clock applications. This record is well suited for voigt profile fitting due to the physical properties of these laser.
+- ECDL_DFBFL_shortRecord.mat is a record performed on the beating between a DFB Fiber Laser and an extended cavity diode laser. It shows a high dynamics concerning the evolution of the linewidth vs time due to mechanical contributions.  It is not well suited for voigt profile fitting.
