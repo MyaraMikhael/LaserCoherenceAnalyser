@@ -142,7 +142,7 @@ function LoadData_Callback(hObject, eventdata, handles)
 % hObject    handle to LoadData (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.isComputing,'String','Analyse des données en cours ...');
+set(handles.isComputing,'String','Loading and Analysing Data ...');
 set(handles.isComputing,'ForegroundColor',[1,0,0]);
 drawnow();
 
@@ -664,13 +664,25 @@ function export_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 %export.LwVsTime = 
-singleSpectrum.f = handles.f;
-singleSpectrum.Y = handles.Y;
-singleSpectrum.YSalehFWHM = handles.YSalehFWHM;
-if isfield(singleSpectrum, 'YVoigtFit')
-    singleSpectrum.YVoigtFit = handles.YVoigtFit';
-    singleSpectrum.YVoigtLorFWHM = handles.YVoigtLor;
-    singleSpectrum.YVoigtGaussFWHM = handles.YVoigtGauss;
+toSave={};
+if isfield(handles,'f')
+    singleSpectrum.f = handles.f;
+    singleSpectrum.Y = handles.Y;
+    singleSpectrum.YSalehFWHM = handles.YSalehFWHM;
+    toSave(end+1)={'singleSpectrum'};
+    if isfield(singleSpectrum, 'YVoigtFit')
+        singleSpectrum.YVoigtFit = handles.YVoigtFit';
+        singleSpectrum.YVoigtLorFWHM = handles.YVoigtLor;
+        singleSpectrum.YVoigtGaussFWHM = handles.YVoigtGauss;
+    end
+    if isfield(handles,'lwVsTimeData')
+        LinewidthVsTime = handles.lwVsTimeData;
+        toSave(end+1)={'LinewidthVsTime'};
+    end
 end
-LinewidthVsTime = handles.lwVsTimeData;
-uisave({'singleSpectrum','LinewidthVsTime'});
+
+if(length(toSave)~=0)
+    uisave(toSave);
+else
+   msgbox('No data to record');
+end
